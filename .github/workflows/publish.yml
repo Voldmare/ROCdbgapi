@@ -36,7 +36,6 @@ jobs:
           remote_path: '${{ secrets.PROD_UPLOAD_URL }}'
           args: '-o ConnectTimeout=5'
       - name: uploading archive to staging
-        if: ${{ steps.branch_name.outputs.branch == 'develop' }}
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
           username: ${{ secrets.USERNAME }}
